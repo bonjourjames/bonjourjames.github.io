@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ James Shin — Press Kit 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0A0A0A;
+    color: #F0EBE3;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 0 80px;
+  }
+
+  /* ── PHOTO HEADER ── */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    margin-bottom: 0;
+  }
+
+  .photo-slot {
+    aspect-ratio: 3/4;
+    background: #1A0608;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .photo-slot .placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #1A0608 0%, #3D0C10 50%, #1A0608 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+  }
+
+  .photo-slot .placeholder span {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: #5A2020;
+    text-transform: uppercase;
+  }
+
+  /* ── NAME BLOCK ── */
+  .name-block {
+    padding: 36px 48px 0;
+    border-top: 1px solid #1E1E1E;
+  }
+
+  .name-block h1 {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #F0EBE3;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .identity-line {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #6E6560;
+    margin-bottom: 6px;
+  }
+
+  .genre-line {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #8B1520;
+    font-weight: 500;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: #1E1E1E;
+    margin: 32px 48px 0;
+  }
+
+  .divider.red {
+    background: #8B1520;
+    height: 1px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 32px 48px 0;
+  }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #8B1520;
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #1E1E1E;
+  }
+
+  /* ── BIO ── */
+  .bio p {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: #C8C0B8;
+    margin-bottom: 18px;
+    max-width: 680px;
+  }
+
+  .bio p:last-child { margin-bottom: 0; }
+
+  /* ── EXPERIENCE ROWS ── */
+  .exp-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid #141414;
+  }
+
+  .exp-row:last-child { border-bottom: none; }
+
+  .exp-date {
+    font-size: 11px;
+    color: #4A4440;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    min-width: 72px;
+  }
+
+  .exp-name {
+    font-size: 12.5px;
+    color: #C8C0B8;
+    flex: 1;
+  }
+
+  .exp-name.highlight {
+    color: #F0EBE3;
+    font-weight: 500;
+  }
+
+  .exp-tag {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8B1520;
+    white-space: nowrap;
+  }
+
+  /* ── RESIDENCY BLOCK ── */
+  .residency-block {
+    border: 1px solid #1E1E1E;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .residency-block .res-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #F0EBE3;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .residency-block .res-detail {
+    font-size: 11px;
+    color: #6E6560;
+    letter-bottom: 0.08em;
+    margin-top: 4px;
+  }
+
+  .residency-block .res-count {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .residency-block .res-count .num {
+    font-size: 36px;
+    font-weight: 700;
+    color: #8B1520;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .residency-block .res-count .num-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4A4440;
+    margin-top: 2px;
+  }
+
+  /* ── CREATIVE DIRECTION ── */
+  .cd-entry {
+    padding: 16px 0;
+    border-bottom: 1px solid #141414;
+  }
+
+  .cd-entry:last-child { border-bottom: none; }
+
+  .cd-title {
+    font-size: 12.5px;
+    color: #F0EBE3;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .cd-desc {
+    font-size: 11.5px;
+    color: #4A4440;
+    line-height: 1.6;
+  }
+
+  /* ── MUTED ROW (regular bookings) ── */
+  .muted-row {
+    padding: 12px 0;
+    font-size: 11.5px;
+    color: #3A3430;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SET DETAILS ── */
+  .set-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: #1E1E1E;
+  }
+
+  .set-cell {
+    background: #0A0A0A;
+    padding: 16px 20px;
+  }
+
+  .set-cell .set-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #4A4440;
+    margin-bottom: 6px;
+  }
+
+  .set-cell .set-value {
+    font-size: 12.5px;
+    color: #C8C0B8;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: flex;
+    gap: 48px;
+  }
+
+  .contact-item .contact-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #4A4440;
+    margin-bottom: 5px;
+  }
+
+  .contact-item .contact-value {
+    font-size: 12.5px;
+    color: #C8C0B8;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 48px 48px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer .footer-name {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #2A2420;
+  }
+
+  .footer .footer-year {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #2A2420;
+  }
+
+  @media print {
+    body { background: #fff; color: #0A0A0A; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- PHOTO GRID — replace .placeholder divs with <img> tags -->
+  <div class="photo-grid">
+    <div class="photo-slot">
+      <!-- <img src="photo1.jpg" alt="DJ James Shin"> -->
+      <div class="placeholder"><span>Photo 01</span></div>
+    </div>
+    <div class="photo-slot">
+      <!-- <img src="photo2.jpg" alt="DJ James Shin"> -->
+      <div class="placeholder"><span>Photo 02</span></div>
+    </div>
+    <div class="photo-slot">
+      <!-- <img src="photo3.jpg" alt="DJ James Shin"> -->
+      <div class="placeholder"><span>Photo 03</span></div>
+    </div>
+  </div>
+
+  <!-- NAME BLOCK -->
+  <div class="name-block">
+    <h1>DJ James Shin</h1>
+    <p class="identity-line">DJ &nbsp;·&nbsp; Yoga Teacher &nbsp;·&nbsp; Creative Director</p>
+    <p class="genre-line">Tech House &nbsp;/&nbsp; House &nbsp;/&nbsp; Techno &nbsp;/&nbsp; Hard Techno</p>
+  </div>
+
+  <div class="divider red" style="margin-top: 24px;"></div>
+
+  <!-- BIO -->
+  <div class="section bio">
+    <div class="section-label">Bio</div>
+    <p>DJ James Shin moves between worlds — DJ, yoga teacher, creative director. On the dancefloor, these aren't separate identities. They converge into one signal.</p>
+    <p>Based in Busan, James architects spaces of freedom through sound. Opposing energies don't collide in his sets. They balance. Light and dark, power and softness, tension and release: each element finds its place within a carefully constructed arc.</p>
+    <p>Drawing from extensive international experience and a deep affinity for Latin groove culture, his sound moves across a wide spectrum — from the outward pull of rhythm to Techno as an inner journey. Beats as mantra. A room breathing in the same pulse.</p>
+    <p>A background in design and dance informs every performance. The stage isn't just a set — it's a statement. As a defining voice in Busan's club scene and a respected figure in Korea's LGBT community, James creates dancefloors that feel both free and safe — spaces where people come to return to Self, and belong.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RESIDENCY -->
+  <div class="section">
+    <div class="section-label">Residency</div>
+    <div class="residency-block">
+      <div>
+        <div class="res-name">DACK BUSAN</div>
+        <div class="res-detail">Saturday Resident &nbsp;·&nbsp; 3hr sets &nbsp;·&nbsp; Busan</div>
+      </div>
+      <div class="res-count">
+        <div class="num">47</div>
+        <div class="num-label">Sessions & counting</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- KOREA & INTERNATIONAL -->
+  <div class="section">
+    <div class="section-label">Korea &amp; International</div>
+
+    <div class="exp-row">
+      <span class="exp-date">2026.06.06</span>
+      <span class="exp-name highlight">HAHOE Festival &nbsp;·&nbsp; JAYU Stage &nbsp;·&nbsp; Andong</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-date">2026.05.22</span>
+      <span class="exp-name highlight">Hard Techno Tanktop Night &nbsp;·&nbsp; PUBLIC, Seoul</span>
+      <span class="exp-tag">Headliner</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-date">2026.04.03</span>
+      <span class="exp-name">MIDNIGHT LUST &nbsp;·&nbsp; X Drive Season 1 &nbsp;·&nbsp; GYM Itaewon, Seoul</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-date">2026.03.28</span>
+      <span class="exp-name">CASA CORONA &nbsp;·&nbsp; Vibes High, Beats Deeper &nbsp;·&nbsp; Seoul</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-date">2025.09.10</span>
+      <span class="exp-name">GR KOREA Opening Reception &nbsp;·&nbsp; Seoul</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-date">2025.08.16</span>
+      <span class="exp-name">Moonlight Circuit Festival &nbsp;·&nbsp; CHROMA, Incheon</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-date">2025.06.28</span>
+      <span class="exp-name">Private Wedding &nbsp;·&nbsp; Rhodes, Greece</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BRAND ACTIVATIONS -->
+  <div class="section">
+    <div class="section-label">Brand Activations</div>
+    <div class="exp-row">
+      <span class="exp-date">2026.02.06</span>
+      <span class="exp-name highlight">MERREL &nbsp;·&nbsp; Agility 6 Pop-up &nbsp;·&nbsp; Busan</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WELLNESS -->
+  <div class="section">
+    <div class="section-label">Wellness</div>
+    <div class="exp-row">
+      <span class="exp-date">2025.11.15</span>
+      <span class="exp-name">Wellness Dive &nbsp;·&nbsp; Busan Fireworks Festival &nbsp;·&nbsp; Cloud Mipo</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CREATIVE DIRECTION -->
+  <div class="section">
+    <div class="section-label">Creative Direction</div>
+
+    <div class="cd-entry">
+      <div class="cd-title">ENIGMA Night 1 &nbsp;·&nbsp; Club NASUB, Busan &nbsp;·&nbsp; 2026.05.23</div>
+      <div class="cd-desc">LGBTQ Friendly &nbsp;·&nbsp; Concept, lineup curation, drag performance programming, two-floor event direction</div>
+    </div>
+
+    <div class="cd-entry">
+      <div class="cd-title">NASUB Halloween Club Edition &nbsp;·&nbsp; NASUB Gwangan, Busan &nbsp;·&nbsp; 2025.10.31</div>
+      <div class="cd-desc">Sole Headliner &nbsp;·&nbsp; Full creative direction &nbsp;·&nbsp; Concept &nbsp;·&nbsp; Costume &amp; performance</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BUSAN -->
+  <div class="section">
+    <div class="section-label">Busan</div>
+    <div class="muted-row">Regular bookings &nbsp;·&nbsp; OUTPUT &nbsp;·&nbsp; Club NASUB &nbsp;·&nbsp; ORGANIC HOUSE &nbsp;·&nbsp; 2025–2026</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SET DETAILS -->
+  <div class="section">
+    <div class="section-label">Set Details</div>
+    <div class="set-grid">
+      <div class="set-cell">
+        <div class="set-label">Set Length</div>
+        <div class="set-value">2–4 hours</div>
+      </div>
+      <div class="set-cell">
+        <div class="set-label">Genres</div>
+        <div class="set-value">Tech House / House / Techno / Hard Techno</div>
+      </div>
+      <div class="set-cell">
+        <div class="set-label">Style</div>
+        <div class="set-value">Long-form, intuitive, groove-led</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <div class="section-label">Contact</div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value">@bonjourjames</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">studiogostoso@gmail.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="footer-name">DJ James Shin</span>
+    <span class="footer-year">2026</span>
+  </div>
+
+</div>
+</body>
+</html>
